@@ -1,0 +1,21 @@
+import java.util.Scanner;
+class DIVISOR {
+    public static void main(String[] args) {
+    Scanner consola =new Scanner(System.in);
+    int primero;
+    int segundo;
+    
+    System.out.println("INGRESE 2 DATOS: ");
+    primero=consola.nextInt();
+    segundo=consola.nextInt();
+    
+    while(primero != segundo){
+        if(primero > segundo){
+            primero=primero-segundo;
+        }else{
+            segundo=segundo-primero;
+        }
+    }
+    System.out.println(primero);
+    }
+}
