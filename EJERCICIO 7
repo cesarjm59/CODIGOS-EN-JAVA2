@@ -1,0 +1,68 @@
+import java.util.Scanner;
+class FECHAS {
+    public static void main(String[] args) {
+        Scanner consola = new Scanner(System.in);
+        
+        int dia1, mes1, año1;
+        int dia2, mes2, año2;
+        
+        int MAXINTENTOS=3;
+        int INTENTOACTUAL=1;
+        
+        System.out.println("==================================");
+        System.out.println("Digite un dia, mes y año aleatorio");
+        System.out.println("(si desea que se detenga ponga 0) ");
+        System.out.println("==================================");
+        System.out.println();
+        
+        do {
+        int intentosRestantes = (MAXINTENTOS - INTENTOACTUAL) + 1;
+        System.out.println(">>> INTENTO " + INTENTOACTUAL + " (Te quedan: " + intentosRestantes + ") <<<");
+        
+        System.out.println("-Ingresa los datos de tu primera fecha-");
+        System.out.println("DIA: ");
+        dia1=consola.nextInt();
+        if(dia1==0){ 
+            break;
+        }
+        System.out.println("MES: ");
+        mes1=consola.nextInt();
+        System.out.println("AÑOS: ");
+        año1=consola.nextInt();
+        
+        System.out.println("-Ingresa los datos de tu segunda fecha-");
+        System.out.println("DIA: ");
+        dia2=consola.nextInt();
+        System.out.println("MES: ");
+        mes2=consola.nextInt();
+        System.out.println("AÑOS: ");
+        año2=consola.nextInt();
+        
+        System.out.println("\n>> Resultado:");
+        
+        if(año1<año2){
+            System.out.println("La primera fecha (" + dia1 + "/" + mes1 + "/" + año1 + ") es anterior.");
+        } else if(año1 > año2){
+            System.out.println("La segunda fecha (" + dia2 + "/" + mes2 + "/" + año2 + ") es anterior.");
+        } else {
+            if(dia1<dia2){
+                System.out.println("La primera fecha (" + dia1 + "/" + mes1 + "/" + año1 + ") es anterior.");
+            } else if(dia1>dia2){
+                System.out.println("La segunda fecha (" + dia2 + "/" + mes2 + "/" + año2 + ") es anterior.");
+            } else {                                                                                      
+                if(mes1<mes2){
+                    System.out.println("La primera fecha (" + dia1 + "/" + mes1 + "/" + año1 + ") es anterior.");
+                } else if(mes1>mes2){
+                    System.out.println("La segunda fecha (" + dia2 + "/" + mes2 + "/" + año2 + ") es anterior.");
+                } else {
+                    System.out.println("Ambas fechas son iguales");
+                }
+            }
+        }
+        INTENTOACTUAL++;
+        
+        } while ( dia1 != 0 && INTENTOACTUAL<=MAXINTENTOS);
+        System.out.println("se detuvo el programa");
+    consola.close();
+    }
+}
