@@ -1,0 +1,53 @@
+import java.util.Scanner;
+class LAMEDIA {
+   public static void main(String[] args) {
+       Scanner consola = new Scanner(System.in);
+       double producto = 1.0;
+       int suma=0;
+       double denominador=0;
+       int contador=0;
+       int n;
+
+
+       System.out.println("===========================");
+       System.out.println("MEDIA ARMONICA Y GEOMETRICA");
+       System.out.println("===========================");
+       System.out.println();
+
+
+       System.out.println("Para dejar de agregar ponga 0");
+       System.out.println("Digite un numero positvo: ");
+
+
+       while (true){
+           n= consola.nextInt();
+           if(n == 0) {
+               break;
+           }
+           if(n<0){
+               System.out.println("Por favor ingresa solo positivos");
+               continue;
+           }
+           contador++;
+           denominador+=1.0/n;
+           producto *=n;
+           suma +=n;
+       }
+       if (contador>0){
+           double geometrica= Math.pow(producto, 1.0 / contador);
+           double armonica = contador/denominador;
+           double diferencia = geometrica - armonica;
+
+
+           System.out.println();
+           System.out.println("La media geometrica es: " + geometrica);
+           System.out.println("La media armonica es: " + armonica );
+           System.out.println("La diferencia de los dos es: " + diferencia);
+
+
+       } else {
+           System.out.println("No se ingreso ningun dato");
+       }
+       consola.close();
+   }
+}
