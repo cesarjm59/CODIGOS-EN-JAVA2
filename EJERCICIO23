@@ -1,0 +1,35 @@
+class CalculoTrigonometrico {
+   public static double calcularFactorial(int numero) {
+       double resultado = 1.0;
+       for (int i = 1; i <= numero; i++) {
+           resultado *= i;
+       }
+       return resultado;
+   }
+   public static double seno(double x, int n) {
+       double sumaSeno = 0.0;
+
+       for (int i = 0; i < n; i++) {
+           int exponente = 2 * i + 1;
+           double potencia = Math.pow(x, exponente);
+           double factorial = calcularFactorial(exponente);
+           double signo = (i % 2 == 0) ? 1.0 : -1.0;
+           double termino = signo * (potencia / factorial);
+
+           sumaSeno += termino;
+       }
+
+       return sumaSeno;
+   }
+   public static void main(String[] args) {
+       double anguloRadianes = Math.PI / 2;
+       int terminos = 4;
+
+       double resultadoAproximado = seno(anguloRadianes, terminos);
+
+       System.out.println("Ángulo evaluado (radianes): " + anguloRadianes);
+       System.out.println("Número de términos usados: " + terminos);
+       System.out.println("Resultado aproximado con tu método: " + resultadoAproximado);
+       System.out.println("Resultado real de Java (Math.sin): " + Math.sin(anguloRadianes));
+   }
+}
