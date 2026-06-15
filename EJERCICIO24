@@ -1,0 +1,25 @@
+import java.util.Scanner;
+class FibonacciPrimos {
+    public static void main(String[] args) {
+        Scanner consola = new Scanner(System.in);
+        System.out.print("Ingrese un numero natural primo: ");
+        int n = consola.nextInt();
+        int a = 1;
+        int b = 1;
+
+        while (b < n) {
+            int siguiente = a + b;
+            a = b;      
+            b = siguiente; 
+        }
+        if (b == n) {
+            System.out.println("\n¡El numero " + n + " SI es un numero Fibonacci!");         
+            int numSiguiente = a + b;          
+            System.out.println("La terna resultante es: [" + a + ", " + n + ", " + numSiguiente + "]");
+        } else {
+            System.out.println("\nEl numero " + n + " NO pertenece a la secuencia de Fibonacci.");
+        }
+
+        consola.close();
+    }
+}
