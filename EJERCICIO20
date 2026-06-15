@@ -1,0 +1,25 @@
+import java.util.Scanner;
+class BINARIODECIMAL {
+   public static void main (String[] args) {
+       Scanner consola = new Scanner(System.in);
+
+
+       System.out.println("====================");
+       System.out.println("DE DECIMAL A BINARIO");
+       System.out.println("====================");
+
+
+       System.out.println("Digire un numero cualquiera: ");
+       int n= consola.nextInt();
+       String binario = Integer.toBinaryString(Math.abs(n));
+
+
+       if(n<0){
+           binario = "-" + binario;
+           System.out.println("Su numero " + "'" + n + "'" + " en binario es: " + binario);
+       } else {
+           System.out.println("Su numero " + "'" + n + "'" + " en binario es: " + binario);
+       }
+       consola.close();
+   }
+}
