@@ -1,0 +1,40 @@
+import java.util.Scanner; 
+public class NumerosGemelos { 
+public static void main(String[] args) { 
+
+Scanner consola = new Scanner(System.in); 
+int contadorGemelos = 0; 
+long numero;
+
+System.out.println("===================================================="); System.out.println(" CONTADOR DE NÚMEROS GEMELOS "); 
+System.out.println(" (Ingrese 0 o un número negativo para terminar) "); System.out.println("===================================================="); 
+
+while (true) { 
+System.out.print("Ingrese un número: "); 
+numero = consola.nextLong(); 
+if (numero <= 0) { 
+break;
+}
+String numStr = Long.toString(numero); 
+int longitud = numStr.length(); 
+if (longitud < 2) {
+ continue; 
+} 
+String primeraMitad = ""; 
+String segundaMitad = ""; 
+int mitad = longitud / 2;
+ if (longitud % 2 == 0) { 
+primeraMitad = numStr.substring(0, mitad); 
+segundaMitad = numStr.substring(mitad); // "123" 
+} else { 
+primeraMitad = numStr.substring(0, mitad);
+ segundaMitad = numStr.substring(mitad + 1);
+} 
+if (primeraMitad.equals(segundaMitad)) { 
+System.out.println("-> ¡El número " + numero + " es GEMELO!"); 
+contadorGemelos++; 
+} 
+} 
+System.out.println("\n===================================================="); System.out.println("Cantidad total de números gemelos encontrados: " + contadorGemelos); System.out.println("===================================================="); consola.close(); 
+} 
+} 
