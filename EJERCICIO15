@@ -1,0 +1,48 @@
+import java.util.Scanner;
+class InterseccionIntervalos {
+    public static void main(String[] args) {
+        Scanner consola = new Scanner(System.in);
+
+        System.out.println("--- Primer Intervalo [a, b] ---");
+        System.out.print("Ingrese el punto a: ");
+        double a = consola.nextDouble();
+        System.out.print("Ingrese el punto b: ");
+        double b = consola.nextDouble();
+
+        System.out.println("\n--- Segundo Intervalo [c, d] ---");
+        System.out.print("Ingrese el punto c: ");
+        double c = consola.nextDouble();
+        System.out.print("Ingrese el punto d: ");
+        double d = consola.nextDouble();
+
+        if (a > b || c > d) {
+            System.out.println("\nError: Los valores de los intervalos son inconsistentes (el inicio es mayor que el fin).");
+            consola.close();
+            return;
+        }
+
+        double inicioInterseccion;
+        if (a > c) {
+            inicioInterseccion = a;
+        } else {
+            inicioInterseccion = c;
+        }
+
+        double finInterseccion;
+        if (b < d) {
+            finInterseccion = b;
+        } else {
+            finInterseccion = d;
+        }
+
+        System.out.println("\n=========================================");
+        if (inicioInterseccion <= finInterseccion) {
+            System.out.println("La interseccion es el intervalo: [" + inicioInterseccion + ", " + finInterseccion + "]");
+        } else {
+            System.out.println("Los intervalos no se cruzan. La interseccion es VACIA.");
+        }
+        System.out.println("=========================================");
+
+        consola.close();
+    }
+}
