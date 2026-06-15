@@ -1,0 +1,31 @@
+import java.util.Scanner;
+class Piramide {
+   public static void main(String[] args) {
+       Scanner consola = new Scanner(System.in);
+
+       System.out.print("Digite un numero : ");
+       int n = consola.nextInt();
+
+       if (n <= 0) {
+           System.out.println("Por favor, ingrese un numero mayor a 0.");
+           consola.close();
+           return;
+       }
+       for (int i = 1; i <= n; i++) {
+           int valor = i;
+          
+           for (int j = 1; j <= i; j++) {
+               System.out.print((valor % 10) + " ");
+               valor++;
+           }
+           valor -= 2;
+          
+           for (int j = 1; j < i; j++) {
+               System.out.print((valor % 10) + " ");
+               valor--;
+           }
+           System.out.println();
+       }
+       consola.close();
+   }
+}
