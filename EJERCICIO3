@@ -1,0 +1,12 @@
+class Suma {
+    public static void main(String[] args) {
+        System.out.println("Suma de los 100 primeros cuadrados");
+        int suma=0;
+        int i;
+        for(i=1; i<=100; i++){
+            double potencia=Math.pow(i,2);
+            suma +=potencia;
+        }
+        System.out.println("La Suma es: " + suma);
+    }
+}
