@@ -1,0 +1,41 @@
+import java.util.Scanner;
+class PuntosCircunferencia {
+    public static void main(String[] args) {
+        Scanner consola = new Scanner(System.in);
+
+        System.out.print("¿Cuantos puntos desea evaluar?: ");
+        int totalPuntos = consola.nextInt();
+
+        int contadorDentro = 0;
+
+        for (int i = 1; i <= totalPuntos; i++) {
+            System.out.println("\n--- Punto " + i + " ---");
+            System.out.print("Ingrese coordenada X: ");
+            double x = consola.nextDouble();
+            System.out.print("Ingrese coordenada Y: ");
+            double y = consola.nextDouble();
+
+            // Verificación para la Circunferencia 1: Centro (5, 4), Radio 2
+            double distanciaC1 = Math.pow(x - 5, 2) + Math.pow(y - 4, 2);
+            boolean estaEnC1 = distanciaC1 <= Math.pow(2, 2); // menor o igual a 4
+
+            // Verificación para la Circunferencia 2: Centro (-5, -4), Radio 3
+            double distanciaC2 = Math.pow(x + 5, 2) + Math.pow(y + 4, 2);
+            boolean estaEnC2 = distanciaC2 <= Math.pow(3, 2); // menor o igual a 9
+
+            // Si está en cualquiera de las dos áreas (incluyendo fronteras)
+            if (estaEnC1 || estaEnC2) {
+                contadorDentro++;
+                System.out.println("¡El punto esta DENTRO de las areas!");
+            } else {
+                System.out.println("El punto esta FUERA de las areas.");
+            }
+        }
+
+        System.out.println("\n=======================================================");
+        System.out.println("El numero total de puntos dentro de las areas es: " + contadorDentro);
+        System.out.println("=======================================================");
+
+        consola.close();
+    }
+}
