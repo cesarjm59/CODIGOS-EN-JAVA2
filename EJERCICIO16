@@ -1,0 +1,19 @@
+import java.util.Scanner;
+class CONTADOR  {
+   public static void main (String[] args){
+       Scanner consola=new Scanner(System.in);
+
+
+       System.out.println("DIGITE UN NUMERO CUALQUIERA: ");
+       int numero = consola.nextInt();
+
+
+       if(numero >= 0 ){
+       int digitos = String.valueOf(numero).length();
+       System.out.println("Su numero ingresado tiene " + "'" + digitos + "'" + " digitos ");
+   } else {
+           System.out.println("Por favor ingrese un numero positivo");
+       }
+       consola.close();
+   }
+}
