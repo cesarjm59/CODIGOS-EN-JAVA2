@@ -1,0 +1,26 @@
+import java.util.Scanner;
+class InvertirNumero {
+   public static void main(String[] args) {
+       Scanner consola = new Scanner(System.in);
+
+       System.out.print("Digite un numero entero: ");
+       int n = consola.nextInt();
+
+       int numeroInvertido = 0;
+       int original = n;
+       int aux = Math.abs(n);
+
+       while (aux > 0) {
+           int ultimoDigito = aux % 10;
+           numeroInvertido = (numeroInvertido * 10) + ultimoDigito;
+           aux = aux / 10;
+       }
+       if (n < 0) {
+           numeroInvertido = -numeroInvertido;
+       }
+       System.out.println("El numero resultante de invertir sus cifras es: " + numeroInvertido);
+
+
+       consola.close();
+   }
+}
