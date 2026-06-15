@@ -1,0 +1,29 @@
+import java.util.Scanner;
+class SUMAPRODUCTODEFRACCIONES {
+    public static void main(String[] args) {
+        Scanner teclado = new Scanner(System.in);
+        double producto=0, suma=0;
+        
+        System.out.println("==Suma Y Producto de Fracciones==");
+        System.out.println("De la 1era Fraccion ingrese el numerador y su denominador");
+        double a = teclado.nextDouble();
+        double b = teclado.nextDouble();
+        
+        System.out.println();
+        System.out.println("De la 2da Fraccion ingrese el numerador y su denominador");
+        double c = teclado.nextDouble();
+        double d = teclado.nextDouble();
+        
+        if( b!=0 && d!=0){
+            producto = (a/b * c/d);
+            suma = (a/b + c/d);
+            System.out.println("La suma de fracciones es: " + suma);
+            System.out.println("El producto de fracciones es: " + producto);
+        } else {
+            System.out.println();
+            System.out.println("Los denominadores no pueden ser 0");
+            System.out.println("Ingrese otros dígitos");
+        }
+        teclado.close();
+    }
+}
