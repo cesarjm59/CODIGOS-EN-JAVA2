@@ -1,0 +1,23 @@
+import java.util.Scanner;
+class CifrarDatos {
+    public static void main(String[] args) {
+        Scanner consola = new Scanner(System.in);
+        System.out.print("Ingrese un numero de 4 digitos a cifrar: ");
+        int numero = consola.nextInt();
+
+        int d1 = numero / 1000;
+        int d2 = (numero / 100) % 10;
+        int d3 = (numero / 10) % 10;
+        int d4 = numero % 10;
+
+        d1 = (d1 + 7) % 10;
+        d2 = (d2 + 7) % 10;
+        d3 = (d3 + 7) % 10;
+        d4 = (d4 + 7) % 10;
+
+        int numeroCifrado = (d3 * 1000) + (d4 * 100) + (d1 * 10) + d2;
+
+        System.out.printf("El entero cifrado es: %04d\n", numeroCifrado);
+        consola.close();
+    }
+}
