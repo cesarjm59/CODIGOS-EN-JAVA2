@@ -1,0 +1,15 @@
+import java.util.Scanner;
+class Factoriales {
+    public static void main(String[] args) {
+        Scanner consola=new Scanner(System.in);
+        int factorial=1;
+        System.out.println("Digite un numero:");
+        int n=consola.nextInt();
+        
+        for(int i=1; i<=n; i++){
+            factorial = factorial * i;            
+        }
+        System.out.println("El factorial de " + n + " es: " + factorial);
+        consola.close();
+    }
+}
