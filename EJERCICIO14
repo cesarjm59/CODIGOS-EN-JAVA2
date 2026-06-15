@@ -1,0 +1,14 @@
+class SUMA100PRIMEROSCUADRADOS  {
+   public static void main (String[] args){
+       System.out.println("==========");
+       long suma=0;
+
+
+       for(int i=1; i<=100; i++){
+           long producto=i*i;
+           suma +=producto;
+           System.out.println(i + " : " + producto);
+       }
+       System.out.println("La suma de todo es: " + suma);
+   }
+}
