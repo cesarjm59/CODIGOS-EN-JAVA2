@@ -1,0 +1,16 @@
+class SumaParImpar {
+    public static void main(String[] args) {
+        int par=0, impar=0;
+        System.out.println("Suma de Pares e Impares comprendidos 1 y 200");
+        
+        for(int i=1; i<=200; i++){
+            if( i % 2==0){
+               par = par + i;
+            } else{
+                impar = impar + i;
+            }
+        }
+        System.out.println("La suma de Pares es: " + par);
+        System.out.println("La suma de Impares es: " + impar);
+    }
+}
