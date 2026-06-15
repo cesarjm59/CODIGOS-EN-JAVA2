@@ -1,0 +1,81 @@
+import java.util.Scanner;
+class PotenciaReal {
+   public static void main(String[] args) {
+       Scanner teclado = new Scanner(System.in);
+
+
+       System.out.print("Ingrese la base (número real): ");
+       double base = teclado.nextDouble();
+
+
+       System.out.print("Ingrese el numerador del exponente (entero): ");
+       int numerador = teclado.nextInt();
+
+
+       System.out.print("Ingrese el denominador del exponente (entero positivo): ");
+       int denominador = teclado.nextInt();
+
+
+       if (denominador <= 0) {
+           System.out.println("El denominador debe ser mayor que cero.");
+       } else {
+
+
+           double resultadoPot = 1.0;
+           int exponenteAbsoluto = numerador;
+
+
+           if (numerador < 0) {
+               exponenteAbsoluto = -numerador;
+           }
+
+
+           for (int i = 1; i <= exponenteAbsoluto; i++) {
+               resultadoPot = resultadoPot * base;
+           }
+
+
+           if (numerador < 0) {
+               resultadoPot = 1.0 / resultadoPot;
+           }
+
+
+
+
+           double errorPermitido = 0.000001;
+           double aproximacion = resultadoPot / 2.0;
+
+
+           if (aproximacion == 0) {
+               aproximacion = 1.0;
+           }
+
+
+           double diferencia = 1.0;
+
+
+           while (diferencia > errorPermitido) {
+               double aproximacionAnterior = aproximacion;
+
+
+               double potAux = 1.0;
+               for (int i = 1; i <= (denominador - 1); i++) {
+                   potAux = potAux * aproximacionAnterior;
+               }
+               aproximacion = ((denominador - 1) * aproximacionAnterior + (resultadoPot / potAux)) / denominador;
+
+
+               diferencia = aproximacion - aproximacionAnterior;
+               if (diferencia < 0) {
+                   diferencia = -diferencia;
+               }
+           }
+           double resultadoFinal = aproximacion;
+
+
+           System.out.println("\n--- Resultado ---");
+           System.out.println(base + "^(" + numerador + "/" + denominador + ") = " + resultadoFinal);
+       }
+       teclado.close();
+   }
+}
