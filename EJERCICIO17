@@ -1,0 +1,19 @@
+import java.util.Scanner;
+class FUNCIONES {
+    public static void main(String[] args) {
+    Scanner consola = new Scanner(System.in);
+
+    System.out.println("Ingrese 4 datos: ");
+    int a=consola.nextInt();
+    int b=consola.nextInt();
+    int c=consola.nextInt();
+    int d=consola.nextInt();
+
+    System.out.println();
+    for(int X=8; X<=100; X++){
+        long resultado= (long) (a * Math.pow(X, 4) - b * Math.pow(X, 3) + 2 * c * Math.pow(X, 2) - X + d) ;
+        System.out.println("f(" +X+ ")" + " = " + resultado );
+    }
+    consola.close();
+    }
+}
